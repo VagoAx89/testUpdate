@@ -178,12 +178,12 @@ void downloadFirmware() {
   }
 
 
-  if (ssl_client.connect("github.com", 443)) {
+  if (ssl_client.connect("raw.githubusercontent.com", 443)) {
     Serial.println(" ok");
     Serial.println("Send GET request...");
 
-    ssl_client.println("GET /VagoAx89/testUpdate/raw/main/update.bin HTTP/1.1");
-    ssl_client.println("Host: github.com");
+    ssl_client.println("GET /VagoAx89/testUpdate/main/update.bin HTTP/1.1");
+    ssl_client.println("Host: raw.githubusercontent.com");
     ssl_client.println("");  //Indispensable mandar esta linea vacia como señal que termina la solicitud.
     ssl_client.println("Connection: close");
     Serial.println("Esperando respuesta...");
